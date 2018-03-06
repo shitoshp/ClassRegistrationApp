@@ -7,13 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var registration_forms_service_1 = require("./services/registration-forms.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            template: '<registration-forms></registration-forms>'
+            templateUrl: 'app.component.html',
+            providers: [registration_forms_service_1.RegistrationFormsService]
         })
     ], AppComponent);
     return AppComponent;

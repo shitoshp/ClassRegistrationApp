@@ -10,20 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var registration_forms_service_1 = require("../../services/registration-forms.service");
-var RegistrationFormsComponent = /** @class */ (function () {
-    function RegistrationFormsComponent(registrationFormsService) {
-        this.registrationFormsService = registrationFormsService;
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var RegistrationFormsService = /** @class */ (function () {
+    function RegistrationFormsService(http) {
+        this.http = http;
+        console.log('Form Sercie Initialized...');
     }
-    RegistrationFormsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'registration-forms',
-            templateUrl: 'registration-forms.component.html'
-        }),
-        __metadata("design:paramtypes", [registration_forms_service_1.RegistrationFormsService])
-    ], RegistrationFormsComponent);
-    return RegistrationFormsComponent;
+    RegistrationFormsService.prototype.getRegistrationForms = function () {
+        return this.http.get('/api/registration-forms')
+            .map(function (res) { return res.json(); });
+    };
+    RegistrationFormsService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], RegistrationFormsService);
+    return RegistrationFormsService;
 }());
-exports.RegistrationFormsComponent = RegistrationFormsComponent;
-//# sourceMappingURL=registration-forms.component.js.map
+exports.RegistrationFormsService = RegistrationFormsService;
+//# sourceMappingURL=registration-forms.service.js.map

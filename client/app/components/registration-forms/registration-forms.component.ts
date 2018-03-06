@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RegistrationFormsService} from '../../services/registration-forms.service';
 
 @Component({
   moduleId: module.id,
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: 'registration-forms.component.html'
 })
 
-export class RegistrationFormsComponent { }
+export class RegistrationFormsComponent {
+	constructor(private registrationFormsService:RegistrationFormsService){
+	
+	}
+}
