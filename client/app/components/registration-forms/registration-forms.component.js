@@ -13,7 +13,13 @@ var core_1 = require("@angular/core");
 var registration_forms_service_1 = require("../../services/registration-forms.service");
 var RegistrationFormsComponent = /** @class */ (function () {
     function RegistrationFormsComponent(registrationFormsService) {
+        var _this = this;
         this.registrationFormsService = registrationFormsService;
+        this.registrationFormsService.getRegistrationForms()
+            .subscribe(function (registration_forms) {
+            console.log(registration_forms);
+            _this.registration_forms = registration_forms;
+        });
     }
     RegistrationFormsComponent = __decorate([
         core_1.Component({

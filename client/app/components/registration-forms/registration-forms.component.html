@@ -1,22 +1,71 @@
 <form class="well">
-	<div class="form-group">
-		<input type="text" class="form-control" placeholder="Add Form">
-
+		<!-- angular form example	 -->
+	<div class="row">
+	<div class="col">
+		<label for="name">Full Name</label>
+		<input type="text" class="form-control" id="name" required>
 	</div>
+		
+	<div class="col">
+		<label for="email">Email</label>
+		<input type="text" class="form-control" id="email">
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="col">
+		<label for="studentId">Student ID</label>
+		<input type="text" class="form-control" id="studentId" required>
+	</div>
+		
+	<div class="col">
+		<label for="degree">Degree</label>
+		<input type="text" class="form-control" id="degree">
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="col">
+		<label for="advisor">Advisor</label>
+		<input type="text" class="form-control" id="advisor" required>
+	</div>
+		
+	<div class="col">
+		<label for="term">Term</label>
+		<input type="text" class="form-control" id="term">
+	</div>
+	</div>
+
+	<div class="form-group">
+		<label for="pin">Alternate PIN</label>
+		<input type="text" class="form-control" id="pin" required>
+	</div>
+		
+	<div class="form-group">
+		<label for="crns">CRNs</label>
+		<input type="text" class="form-control" id="crns" placeholder="Please input all CRNs separated by comma">
+	</div>
+	<button type="submit" class="btn btn-success">Submit</button>
+	
 
 </form>
 
+<br>
+
 <div class="forms-list">
-	<div class="row">
-		<div class="col-md-1">
-			<input type="checkbox">
+	<div *ngFor="let form of registration_forms">
+		<div class="row">
+			<div class="col-md-1">
+				<input type="checkbox">
+			</div>
+			<div class="col-md-7">
+				{{form.name}}, {{form.term}}
+			</div>
+			<div class="col-md-4">
+				<input type="button" value="Delete" class="btn btn-danger">
+			</div>
 		</div>
-		<div class="col-md-7">
-			Some Task
-		</div>
-		<div class="col-md-4">
-			<input type="button" value="Delete" class="btn btn-danger">
-		</div>
+		<hr>
 	</div>
 </div>
 
