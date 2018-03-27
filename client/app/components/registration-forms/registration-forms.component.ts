@@ -10,6 +10,15 @@ import {Form} from '../../../Form';
 
 export class RegistrationFormsComponent {
   registration_forms: Form[];
+  studentId: string;
+  name: string;
+  degree: string;
+  email: string;
+  advisor: string;
+  term: string;
+  crns: Array<string>;
+  isApproved: boolean;
+  pin: string;
 
 	constructor(private registrationFormsService:RegistrationFormsService){
     this.registrationFormsService.getRegistrationForms()
@@ -17,5 +26,9 @@ export class RegistrationFormsComponent {
         console.log(registration_forms);
         this.registration_forms = registration_forms;
       });
-	}
+  }
+  
+  addForm(){
+    console.log("samurai");
+  }
 }

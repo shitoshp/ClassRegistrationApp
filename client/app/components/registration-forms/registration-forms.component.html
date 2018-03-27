@@ -1,51 +1,54 @@
 <form class="well">
 		<!-- angular form example	 -->
+	<div ng-controller="RegistrationFormsComponent as r">
 	<div class="row">
 	<div class="col">
 		<label for="name">Full Name</label>
-		<input type="text" class="form-control" id="name" required>
+		<input type="text" [(ngModel)]="name" name="name" class="form-control" id="name" required>
 	</div>
 		
 	<div class="col">
 		<label for="email">Email</label>
-		<input type="text" class="form-control" id="email">
+		<input type="text" [(ngModel)]="email" name="email" class="form-control" id="email">
 	</div>
 	</div>
 
 	<div class="row">
 	<div class="col">
 		<label for="studentId">Student ID</label>
-		<input type="text" class="form-control" id="studentId" required>
+		<input type="text" [(ngModel)]="studentId" name="studentId" class="form-control" id="studentId" required>
 	</div>
 		
 	<div class="col">
 		<label for="degree">Degree</label>
-		<input type="text" class="form-control" id="degree">
+		<input type="text" [(ngModel)]="degree" name="degree" class="form-control" id="degree">
 	</div>
 	</div>
 	
 	<div class="row">
 	<div class="col">
 		<label for="advisor">Advisor</label>
-		<input type="text" class="form-control" id="advisor" required>
+		<input type="text" [(ngModel)]="advisor" name="advisor" class="form-control" id="advisor" required>
 	</div>
 		
 	<div class="col">
 		<label for="term">Term</label>
-		<input type="text" class="form-control" id="term">
+		<input type="text" [(ngModel)]="term" name="term" class="form-control" id="term">
 	</div>
 	</div>
 
 	<div class="form-group">
 		<label for="pin">Alternate PIN</label>
-		<input type="text" class="form-control" id="pin" required>
+		<input type="text" [(ngModel)]="pin" name="pin" class="form-control" id="pin" required>
 	</div>
 		
 	<div class="form-group">
 		<label for="crns">CRNs</label>
-		<input type="text" class="form-control" id="crns" placeholder="Please input all CRNs separated by comma">
+		<input type="text" [(ngModel)]="crns" name="crns" class="form-control" id="crns" placeholder="Please input all CRNs separated by comma">
 	</div>
-	<button type="submit" class="btn btn-success">Submit</button>
+	
+	<button type="submit" class="btn btn-success" ng-click="r.addForm()">Submit</button>
+	</div>
 	
 
 </form>

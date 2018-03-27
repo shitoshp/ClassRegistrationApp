@@ -21,6 +21,9 @@ var RegistrationFormsComponent = /** @class */ (function () {
             _this.registration_forms = registration_forms;
         });
     }
+    RegistrationFormsComponent.prototype.addForm = function () {
+        console.log("samurai");
+    };
     RegistrationFormsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
